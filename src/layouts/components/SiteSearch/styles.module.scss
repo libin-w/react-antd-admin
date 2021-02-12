@@ -1,0 +1,24 @@
+.site_search_wrapper {
+  padding-right: 6px !important;
+
+  .search_icon {
+    margin-right: 6px;
+  }
+  .site_search_ipt_wrapper {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    transition: width 0.15s;
+    width: 0px;
+    &.is_show {
+      width: 136px;
+    }
+  }
+  .site_search_ipt {
+    width: 100%;
+
+    :global(.ant-select-selector) {
+      background-color: #fff !important;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.image_uploader {
+  :global(.ant-upload-list-item-actions > a) {
+    display: none;
+  }
+}

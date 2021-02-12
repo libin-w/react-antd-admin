@@ -1,0 +1,96 @@
+.list_page_table_wrapper {
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+
+  .table_tools_wrapper {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+  .table_title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.85;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 50px;
+  }
+  .tools_list {
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .table_tools_icon {
+      padding: 4px 0px;
+      cursor: pointer;
+    }
+    :global(.ant-popover-inner-content) {
+      max-height: 240px;
+      overflow-y: auto;
+      /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background-color: #f1f1f1;
+      }
+
+      /*定义滚动条轨道 内阴影+圆角*/
+      &::-webkit-scrollbar-track {
+        border-radius: 0px;
+        background-color: #f1f1f1;
+      }
+
+      /*定义滑块 内阴影+圆角*/
+      &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: #dddddd;
+      }
+    }
+  }
+  .loading_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 9;
+  }
+}
+.dropdown_menu_wrapper {
+  :global(.ant-dropdown-menu-item) {
+    min-width: 100px;
+  }
+}
+.list_page_table {
+  :global(.ant-table-pagination.ant-pagination) {
+    padding: 0 15px;
+  }
+  :global(.ant-table-cell-ellipsis .ant-tooltip-inner) {
+    white-space: normal;
+  }
+}
+.columns_checkbox_group {
+  :global(.ant-checkbox-group-item) {
+    display: block;
+    color: #666;
+    line-height: 24px;
+  }
+}
+.list_page_table_wrapper {
+  &:global(.no-padding) {
+    :global(.ant-table-pagination.ant-pagination),
+    .table_tools_wrapper {
+      padding: 0;
+    }
+  }
+}

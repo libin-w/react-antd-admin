@@ -1,0 +1,158 @@
+@import '~normalize.css/normalize.css';
+html body {
+  height: unset;
+}
+html {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: #ffffff;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(204, 204, 204, 0.75);
+    opacity: 0.5;
+    &:hover {
+      background-color: rgba(204, 204, 204, 1);
+    }
+  }
+}
+body {
+  min-width: 720px;
+}
+.antd-admin-main-layout-wrapper {
+  .antd-admin-fixed-header {
+    padding: 0px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: $headerNavHeight;
+    .antd-admin-header-left {
+      min-width: fit-content;
+      padding-left: 16px;
+      line-height: $headerNavHeight;
+    }
+    .antd-admin-header-menu-wrapper {
+      flex: 1;
+      min-width: 240px;
+      overflow: hidden;
+      .antd-admin-header-menu {
+        line-height: $headerNavHeight;
+        user-select: none;
+      }
+    }
+    .antd-admin-header-right {
+      min-width: 240px;
+      overflow: hidden;
+      height: 100%;
+      .antd-admin-header-right-content {
+        height: 100%;
+        float: right;
+        display: flex;
+        padding-right: 8px;
+        font-size: 14px;
+        .antd-admin-header-right-action-item {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          padding: 0px 12px;
+          transition: all 0.3s ease 0s;
+          color: #fff;
+          .anticon {
+            color: #fff;
+          }
+          .user-avatar {
+            vertical-align: top;
+            margin: 0px 8px 0px 0px;
+            background: rgba(255, 255, 255, 0.85);
+          }
+          .username-text {
+            @extend .text-ellipsis;
+            line-height: 1.2;
+            max-width: 72px;
+          }
+          .notice-icon {
+            padding: 4px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .antd-admin-main-content {
+    padding-top: $headerNavHeight;
+  }
+}
+.basics-submodule-layout-wrapper {
+  .basics-submodule-sider-placeholder {
+    transition: background-color 0.3s ease 0s, min-width 0.3s ease 0s,
+      max-width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    overflow: hidden;
+    width: $siderWidth;
+    max-width: $siderWidth;
+    min-width: $siderWidth;
+    flex: 0 0 $siderWidth;
+    &.is-collapsed {
+      width: $siderCollapsedWidth;
+      max-width: $siderCollapsedWidth;
+      min-width: $siderCollapsedWidth;
+      flex: 0 0 $siderCollapsedWidth;
+    }
+  }
+  .basics-submodule-sider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+    padding-top: $headerNavHeight;
+  }
+  .basics-submodule-sider-menu {
+    height: 100%;
+    border-right: 0px;
+    &.ant-menu-inline-collapsed {
+      width: $siderCollapsedWidth;
+      & > .ant-menu-item {
+        padding-left: calc(50% - 16px / 2) !important;
+      }
+      .ant-menu-submenu-title {
+        padding-left: calc(50% - 16px / 2) !important;
+      }
+    }
+  }
+  .basics-submodule-sider-trigger {
+    border-top: 1px solid #f0f0f0;
+    font-size: 16px;
+    height: 100%;
+    text-align: left;
+    padding-left: 16px;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+  .basics-submodule-content {
+    margin: $basicsContentMargin $basicsContentMargin 60px;
+  }
+}
+// 全局处理Form表单内，Button间距
+.ant-form {
+  .ant-btn + .ant-btn {
+    margin-left: 10px;
+  }
+}

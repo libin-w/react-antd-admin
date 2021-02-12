@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/*
+ * @Author: WangLibin
+ * @Date: 2021-01-21 19:18:01
+ * @LastEditors: WangLibin
+ * @LastEditTime: 2021-02-08 10:49:08
+ * @Description:
+ */
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { ConfigProvider } from 'antd';
+import 'dayjs/locale/zh-cn';
+import zhCN from 'antd/es/locale/zh_CN';
+import store from '@/store/index';
+import AppRoute from '@/routers/index';
+import { getBaseName } from '@/utils/index';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ConfigProvider locale={zhCN}>
+        <BrowserRouter basename={getBaseName()}>
+          <AppRoute />
+        </BrowserRouter>
+      </ConfigProvider>
+    </Provider>
   );
-}
+};
 
 export default App;

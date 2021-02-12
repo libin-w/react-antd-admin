@@ -1,0 +1,13 @@
+.page_content_card {
+  :global(.ant-card-body) {
+    padding: 0px $basicsContentMargin;
+  }
+  &:global(.all-padding .ant-card-body) {
+    padding: $basicsContentMargin;
+  }
+  &:not(&:global(.all-padding)) {
+    :global(.ant-card-body > .ant-form) {
+      padding-top: $basicsContentMargin;
+    }
+  }
+}

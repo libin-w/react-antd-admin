@@ -1,0 +1,10 @@
+.handle_button {
+  padding: 4px;
+  margin-left: 6px;
+  &:first-of-type {
+    margin: 0px;
+  }
+}
+:global(.ant-divider) + .handle_button {
+  margin: 0px;
+}

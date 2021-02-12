@@ -1,0 +1,18 @@
+.page_card_container {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+  .loading_box {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 9999;
+  }
+}

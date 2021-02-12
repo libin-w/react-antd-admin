@@ -1,0 +1,29 @@
+.logo_wrapper {
+  min-width: 165px;
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+  padding-right: 16px;
+  img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .title_wrapper {
+    display: inline-block;
+    padding: 0 0px 0px 8px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    vertical-align: top;
+  }
+}
+@media (max-width: 768px) {
+  .logo_wrapper {
+    min-width: 56px;
+    .title_wrapper {
+      display: none;
+    }
+  }
+}

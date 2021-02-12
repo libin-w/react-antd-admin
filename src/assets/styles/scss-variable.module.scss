@@ -1,0 +1,11 @@
+$primaryColor: #1890ff;
+$headerNavHeight: 48px;
+$siderWidth: 200px;
+$siderCollapsedWidth: 48px;
+$basicsContentMargin: 16px;
+:export {
+  headerNavHeight: $headerNavHeight;
+  siderWidth: $siderWidth;
+  siderCollapsedWidth: $siderCollapsedWidth;
+  basicsContentMargin: $basicsContentMargin;
+}

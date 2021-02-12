@@ -1,0 +1,8 @@
+.page_header_block {
+  margin: (-$basicsContentMargin) (-$basicsContentMargin) 0px;
+  padding-left: $basicsContentMargin;
+  padding-right: $basicsContentMargin;
+  :global(.ant-page-header-heading-title) {
+    font-size: 18px;
+  }
+}
