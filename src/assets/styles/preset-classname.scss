@@ -15,6 +15,15 @@
     font-size: 1px * $i;
   }
 }
+.text-a-l {
+  text-align: left;
+}
+.text-a-c {
+  text-align: center;
+}
+.text-a-r {
+  text-align: right;
+}
 /* 生成 border-radius 值为 2px 至 8px 的类名 */
 @for $i from 2 through 8 {
   .border-ra-#{$i} {
@@ -80,7 +89,4 @@
   .padding-b-#{$i} {
     padding-bottom: 1px * $i !important;
   }
-}
-.sss{
-    color:$primaryColor ;
 }
