@@ -1,15 +1,15 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-09 11:10:47
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-09 11:12:07
- * @Description: UserNameDropdown
- */
 import { FC } from 'react';
 import { Avatar, Dropdown, Menu } from 'antd';
+import { useSelector, shallowEqual } from 'react-redux';
+import { RootStateInterface } from '@/store';
+import { UserInfoStateInterface } from '@/store/modules/user-info/reducer';
 import defaultAvatarImg from '@/assets/images/default-avatar-img.png';
 import { AppstoreOutlined, LogoutOutlined } from '@ant-design/icons';
 const UserNameDropdown: FC<{}> = () => {
+  const userInfo = useSelector<RootStateInterface, UserInfoStateInterface>(
+    (state) => state.userInfo,
+    shallowEqual
+  );
   return (
     <Dropdown
       placement="bottomLeft"
@@ -24,8 +24,8 @@ const UserNameDropdown: FC<{}> = () => {
       }
     >
       <div className="antd-admin-header-right-action-item">
-        <Avatar size="small" className="user-avatar" src={defaultAvatarImg} />
-        <span className="username-text">User Name</span>
+        <Avatar size="small" className="user-avatar" src={userInfo.avatar || defaultAvatarImg} />
+        <span className="username-text">{userInfo.realName}</span>
       </div>
     </Dropdown>
   );

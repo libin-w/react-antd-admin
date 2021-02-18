@@ -7,16 +7,20 @@ export type UserInfoStateInterface = {
   userInfoStatus: UserInfoStatusType;
   userName: string;
   realName: string;
+  avatar: string;
   userId: number;
   accessData: string[];
+  roleList: any[];
 };
 
 const initialState: UserInfoStateInterface = {
   userInfoStatus: 'none',
   userName: '',
   realName: '',
+  avatar: '',
   userId: 0,
-  accessData: []
+  accessData: [],
+  roleList: []
 };
 
 // reducer
@@ -32,7 +36,9 @@ export default function reducer(state: UserInfoStateInterface = initialState, ac
         userId: action.payload.data?.userId || 0,
         userName: action.payload.data?.userName || '',
         realName: action.payload.data?.realName || '',
-        accessData: action.payload.data?.roleList.map((role) => role.key) || []
+        avatar: action.payload.data?.avatar || '',
+        accessData: action.payload.data?.roleList.map((role) => role.key) || [],
+        roleList: action.payload.data?.roleList || []
       };
     case `${types.GET_USER_INFO}_${ActionType.Rejected}`:
       return { ...state, userInfoStatus: action.payload.code === '40001' ? 'loading' : 'fail' };

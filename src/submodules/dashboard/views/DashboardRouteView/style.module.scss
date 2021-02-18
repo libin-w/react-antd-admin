@@ -40,6 +40,16 @@
       font-size: 20px;
       line-height: 28px;
     }
+    .role_name_item {
+      &::before {
+        content: '·';
+        padding: 0px 4px;
+        font-weight: bolder;
+      }
+      &:first-of-type::before {
+        display: none;
+      }
+    }
   }
   @media (max-width: 768px) {
     & {

@@ -1,18 +1,22 @@
 import mockServer, { Random, MockResponseType } from '../utils/mockServer';
 import { getPostParams, createToken, analyticToken } from '../utils';
+const adminName = Random.name();
+const guestName = Random.name();
 const userData = [
   {
     id: 1,
     username: 'admin',
-    realName: Random.name(),
+    realName: adminName,
     password: '123456',
-    roleIds: [1]
+    avatar: Random.dataImage('60x60', adminName[0]),
+    roleIds: [1, 2]
   },
   {
     id: 2,
     username: 'guest',
-    realName: Random.name(),
+    realName: guestName,
     password: '123456',
+    avatar: Random.dataImage('60x60', guestName[0]),
     roleIds: [2]
   }
 ];
@@ -79,6 +83,7 @@ mockServer({
         userId: currentUser?.id,
         userName: currentUser?.username,
         realName: currentUser?.realName,
+        avatar: currentUser?.avatar,
         roleList: roleList.filter((role) => currentUser?.roleIds?.includes(role.id))
       };
     } catch (error) {
