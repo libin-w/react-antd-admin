@@ -3,6 +3,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* 生成 font-weight 值为 100 至 900 的类名 */
 @for $i from 1 through 9 {
   .font-w-#{100 * $i} {

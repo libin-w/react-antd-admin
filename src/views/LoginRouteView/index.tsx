@@ -1,15 +1,27 @@
 import { FC, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, Input, Button, Tooltip } from 'antd';
 import { UserOutlined, SafetyOutlined } from '@ant-design/icons';
 import { useLockFn } from 'ahooks';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import userInfoActions from '@/store/modules/user-info/actions';
+import { useDispatch } from 'react-redux';
+import { AnyAction } from '@/store/types';
 import UniverseBackground from './UniverseBackground';
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 const StyleWrapper = styled.div<{}>`
   height: 100vh;
   min-height: 720px;
   position: relative;
   padding: 10px;
-
+  animation: 1s ${fadeIn};
   .login-form-wrapper {
     position: relative;
     z-index: 10;
@@ -61,6 +73,8 @@ const accountList = [
   }
 ];
 const LoginRouteView: FC<{}> = () => {
+  const history = useHistory();
+  const dispatch = useDispatch<(action: AnyAction) => Promise<any>>();
   const [form] = Form.useForm();
   const [loading, setLoading] = useState<boolean>(false);
   const validateLoginForm = (): Promise<[any, any]> => {
@@ -81,6 +95,21 @@ const LoginRouteView: FC<{}> = () => {
   const submitLogin = useLockFn(async () => {
     const [values, error] = await validateLoginForm();
     console.log(values, error);
+    if (values) {
+      dispatch(
+        userInfoActions.login({
+          username: values.username,
+          password: values.password
+        })
+      )
+        .then(() => {
+          history.replace('/');
+        })
+        .catch((err: any) => {
+          console.log(err);
+          setLoading(false);
+        });
+    }
   });
   return (
     <StyleWrapper>

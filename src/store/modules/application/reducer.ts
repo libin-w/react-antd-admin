@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-18 15:44:02
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-07 17:02:41
- * @Description: applicationReducer
- */
-
 import Immutable from 'seamless-immutable';
 import { AnyAction } from 'redux';
 import { ModuleConfigInterface } from '@/@types/moduleConfig';
@@ -34,18 +26,18 @@ submoduleFiles.keys().forEach((modulePath) => {
 submoduleConfigList.sort((a, b) => {
   return a.sort - b.sort;
 });
-export type ApplicationReducerType = Immutable.ImmutableObject<{
+export type ApplicationStateType = Immutable.ImmutableObject<{
   submoduleConfigList: SubmoduleConfigItemType[];
 }>;
 
-const initialState: ApplicationReducerType = Immutable({
+const initialState: ApplicationStateType = Immutable({
   submoduleConfigList: submoduleConfigList
 });
 // reducer
 export default function reducer(
-  state: ApplicationReducerType = initialState,
+  state: ApplicationStateType = initialState,
   action: AnyAction
-): ApplicationReducerType {
+): ApplicationStateType {
   switch (action.type) {
     default:
       return state;

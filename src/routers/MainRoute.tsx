@@ -8,11 +8,12 @@
 import React, { lazy, FC, ComponentType } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { Switch, Redirect } from 'react-router-dom';
+import Immutable from 'seamless-immutable';
 import PrivateRoute from './PrivateRoute';
 import { Modal } from 'antd';
 import { UnifiedSuspense } from '@/components';
 import { SubmoduleConfigItemType } from '@/store/modules/application/reducer';
-
+import { RootStateInterface } from '@/store';
 interface PropsTypes {}
 
 const importSubmodulesFile = (moduleKey: string): Promise<{ default: ComponentType<any> }> => {
@@ -37,10 +38,10 @@ const importSubmodulesFile = (moduleKey: string): Promise<{ default: ComponentTy
 };
 
 const MainRoute: FC<PropsTypes> = React.memo(() => {
-  const submoduleConfigList = useSelector<{}, SubmoduleConfigItemType[]>(
-    (state: any) => state.application.submoduleConfigList,
-    shallowEqual
-  );
+  const submoduleConfigList = useSelector<
+    RootStateInterface,
+    Immutable.ImmutableArray<SubmoduleConfigItemType>
+  >((state) => state.application.submoduleConfigList, shallowEqual);
   let redirectPath = '/403';
   if (submoduleConfigList?.[0]?.modulePath) {
     redirectPath = `/${submoduleConfigList?.[0]?.modulePath}`;

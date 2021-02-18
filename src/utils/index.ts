@@ -1,4 +1,5 @@
 import scrollTo from 'antd/lib/_util/scrollTo';
+import { removeToken } from '@/utils/accessToken';
 const {
   NODE_ENV = 'production',
   REACT_APP_DEPLOY_PATH = '/',
@@ -86,16 +87,15 @@ export const randomInteger = (...args: [number] | [number, number]) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// function random(min, max) {
-//     if (arguments.length < 2) {
-//       max = min;
-//       min = 0;
-//     }
-//     if (min > max) {
-//       const hold = max;
-//       max = min;
-//       min = hold;
-//     }
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-//   }
+/**
+ * 清除缓存数据并跳转到登录页
+ */
+export const logoutAndClaerData = (noRecord = false) => {
+  removeToken();
+  if (noRecord) {
+    window.location.href = `${getBaseName()}login`;
+  } else {
+    window.location.href = `${getBaseName()}login?redirect_url=${window.location.pathname}`;
+  }
+};
 export { scrollTo };

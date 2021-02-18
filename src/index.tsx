@@ -10,6 +10,7 @@ import '@/assets/styles/index.scss';
 import App from './App';
 import ErrorBoundary from './ErrorBoundary';
 import reportWebVitals from './reportWebVitals';
+import '@/mocks';
 
 ReactDOM.render(
   <ErrorBoundary>

@@ -1,16 +1,9 @@
 import React, { MutableRefObject } from 'react';
 import ResizeObserver from 'rc-resize-observer';
 import { randomInteger, debounce } from '@/utils';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import bgImage from './images/bg_image.jpg';
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+
 const StyleWrapper = styled.div<{}>`
   width: 100%;
   height: 100%;
@@ -18,7 +11,6 @@ const StyleWrapper = styled.div<{}>`
   position: absolute;
   left: 0;
   top: 0;
-  animation: 1s ${fadeIn};
   .bg-wrapper {
     width: 100%;
     height: 100%;

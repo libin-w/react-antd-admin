@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-12 15:13:13
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-01-29 15:56:03
- * @Description: storeEntry
- */
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import ReduxPromiseMiddleware from 'redux-promise-middleware';
 import ReduxThunk from 'redux-thunk';
@@ -18,14 +11,19 @@ import {
   AnyAction
 } from './types';
 import { devtoolsIsDisabled } from '@/utils/devTools';
-import application from './modules/application/reducer';
+import application, { ApplicationStateType } from './modules/application/reducer';
+import userInfo, { UserInfoStateInterface } from './modules/user-info/reducer';
 const composeEnhancers = devtoolsIsDisabled()
   ? compose
   : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
-
+export interface RootStateInterface<T = {}> {
+  application: ApplicationStateType;
+  userInfo: UserInfoStateInterface;
+}
 // 始终存在于应用程序中的 Reducer
 const staticReducers = {
-  application
+  application,
+  userInfo
 };
 
 function createReducerManager(initialReducers: {
