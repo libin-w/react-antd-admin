@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 09:50:41
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-07 10:23:08
- * @Description: AppRoute
- */
 import { FC, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { UnifiedSuspense } from '@/components';

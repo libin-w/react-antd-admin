@@ -8,6 +8,7 @@
 import { ModuleConfigInterface } from '@/@types';
 const moduleConfig: ModuleConfigInterface = {
   moduleName: 'module-3',
-  modulePath: 'module-3'
+  modulePath: 'module-3',
+  sort: 3
 };
 export default moduleConfig;

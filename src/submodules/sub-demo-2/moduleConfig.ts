@@ -9,6 +9,7 @@ import { ModuleConfigInterface } from '@/@types';
 const moduleConfig: ModuleConfigInterface = {
   moduleName: 'module-2',
   modulePath: 'module-2',
-  iconName: 'AppstoreOutlined'
+  iconName: 'AppstoreOutlined',
+  sort: 2
 };
 export default moduleConfig;

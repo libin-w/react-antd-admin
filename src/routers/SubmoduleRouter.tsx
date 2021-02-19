@@ -3,6 +3,7 @@ import { Switch, useLocation, useHistory } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import NotFoundPage from '@/views/NotFoundPage';
 import { usePersistFn } from 'ahooks';
+import { isExternalLink } from '@/utils';
 import { ReactComponentType, RouterConfigInterface, ModuleConfigInterface } from '@/@types';
 interface PropsTypes {
   moduleConfig: ModuleConfigInterface;
@@ -23,7 +24,7 @@ const SubmoduleRouter: FC<PropsTypes> = ({ moduleConfig, routerConfig }) => {
       for (let i = 0; i < dataList.length; i++) {
         const ele = dataList[i];
         const path = `${beginPath}/${ele.path}`;
-        if (ele.view) {
+        if (ele.view && !isExternalLink(ele.path)) {
           pathList.push(path);
           routeList.push({
             path: path,

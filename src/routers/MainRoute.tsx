@@ -1,15 +1,9 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 09:50:41
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-08 16:51:13
- * @Description: MainRoute
- */
 import React, { lazy, FC, ComponentType } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { Switch, Redirect } from 'react-router-dom';
 import Immutable from 'seamless-immutable';
 import PrivateRoute from './PrivateRoute';
+import { isExternalLink } from '@/utils';
 import { Modal } from 'antd';
 import { UnifiedSuspense } from '@/components';
 import { SubmoduleConfigItemType } from '@/store/modules/application/reducer';
@@ -52,6 +46,9 @@ const MainRoute: FC<PropsTypes> = React.memo(() => {
       <Switch>
         {submoduleConfigList.map((module) => {
           const { key, modulePath, moduleName } = module;
+          if (isExternalLink(modulePath)) {
+            return null;
+          }
           return (
             <PrivateRoute
               key={key}

@@ -98,4 +98,14 @@ export const logoutAndClaerData = (noRecord = false) => {
     window.location.href = `${getBaseName()}login?redirect_url=${window.location.pathname}`;
   }
 };
+/**
+ * 判断是否为外部链接
+ * @param url - 链接
+ */
+export const isExternalLink = (url: string): boolean => {
+  if (typeof url === 'string') {
+    return /^http(s)?:\/\/(\S)+\.(\S)+/.test(url);
+  }
+  return false;
+};
 export { scrollTo };

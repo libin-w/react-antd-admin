@@ -4,6 +4,7 @@ import Icons from '@/icons';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 import { usePersistFn } from 'ahooks';
+import { isExternalLink } from '@/utils';
 import { SubmoduleConfigItemType } from '@/store/modules/application/reducer';
 
 const HeaderMenu = () => {
@@ -28,14 +29,20 @@ const HeaderMenu = () => {
       const { modulePath, moduleName, iconName } = module;
       return (
         <Menu.Item key={modulePath} icon={module.iconName ? Icons[iconName]?.({}) : null}>
-          <NavLink
-            to={`/${modulePath}`}
-            activeStyle={{
-              pointerEvents: 'none'
-            }}
-          >
-            {moduleName}
-          </NavLink>
+          {isExternalLink(modulePath) ? (
+            <a href={modulePath} target="_blank" rel="noopener noreferrer">
+              {moduleName}
+            </a>
+          ) : (
+            <NavLink
+              to={`/${modulePath}`}
+              activeStyle={{
+                pointerEvents: 'none'
+              }}
+            >
+              {moduleName}
+            </NavLink>
+          )}
         </Menu.Item>
       );
     });

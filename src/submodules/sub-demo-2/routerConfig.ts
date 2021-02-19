@@ -50,6 +50,11 @@ const routerConfig: RouterConfigInterface = [
     iconName: 'AppstoreOutlined',
     view: TestPage,
     path: 'hhh'
+  },
+  {
+    showTitle: '百度首页',
+    iconName: 'LinkOutlined',
+    path: 'https://www.baidu.com'
   }
 ];
 export default routerConfig;

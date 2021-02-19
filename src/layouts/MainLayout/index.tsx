@@ -8,7 +8,7 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import { GlobalLoading } from '@/components';
 import MainRoute from '@/routers/MainRoute';
 import Logo from '../components/Logo';
-import SiteSearch from '../components/SiteSearch';
+import SearchTool from '../components/SearchTool';
 import HeaderMenu from '../components/HeaderMenu';
 import UserNameDropdown from '../components/UserNameDropdown';
 import LocalErrorLogEntry from '../components/LocalErrorLogEntry';
@@ -77,7 +77,7 @@ const MainLayout: FC<{}> = () => {
           </div>
           <div className="antd-admin-header-right">
             <div className="antd-admin-header-right-content">
-              <SiteSearch />
+              <SearchTool />
               <Tooltip placement="bottom" title="使用说明">
                 <a
                   className="antd-admin-header-right-action-item"

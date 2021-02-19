@@ -9,10 +9,16 @@ export interface SubmoduleConfigItemType extends ModuleConfigInterface {
 /**
  * 获取 submodules 目录下所有子模块配置
  */
-
+const submoduleConfigList: SubmoduleConfigItemType[] = [
+  {
+    sort: 4,
+    key: 'antd-link',
+    moduleName: 'AntDesign',
+    iconName: 'AntDesignOutlined',
+    modulePath: 'https://ant-design.gitee.io/index-cn'
+  }
+];
 const submoduleFiles = require.context('@/submodules/', true, /moduleConfig\.ts/);
-
-const submoduleConfigList: SubmoduleConfigItemType[] = [];
 submoduleFiles.keys().forEach((modulePath) => {
   const moduleItem = submoduleFiles(modulePath).default as ModuleConfigInterface;
   if (moduleItem.noRegister !== true) {

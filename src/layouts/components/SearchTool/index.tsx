@@ -10,7 +10,9 @@ const mockVal = (str: string, repeat: number = 1) => {
   };
 };
 
-const SiteSearch: FC<{}> = () => {
+const SearchTool: FC<{
+  placeholder?: string;
+}> = ({ placeholder }) => {
   const [showIpt, setShowIpt] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>('');
   const [options, setOptions] = useState<{ value: string }[]>([]);
@@ -54,7 +56,8 @@ const SiteSearch: FC<{}> = () => {
           onSelect={onSelect}
           onChange={onChange}
           onSearch={onSearch}
-          placeholder="站内搜索"
+          getPopupContainer={() => ref.current || document.body}
+          placeholder={placeholder || '输入关键字搜索'}
           bordered={false}
           size="small"
         />
@@ -63,4 +66,4 @@ const SiteSearch: FC<{}> = () => {
   );
 };
 
-export default SiteSearch;
+export default SearchTool;

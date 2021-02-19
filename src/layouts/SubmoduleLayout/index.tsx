@@ -5,7 +5,7 @@ import { Layout, Menu } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { usePersistFn } from 'ahooks';
 import { UnifiedSuspense } from '@/components';
-import { slicePathname } from '@/utils';
+import { slicePathname, isExternalLink } from '@/utils';
 import Icons from '@/icons';
 import { RouterConfigInterface, ModuleConfigInterface } from '@/@types';
 import variablesScss from '@/assets/styles/scss-variable.module.scss';
@@ -38,6 +38,15 @@ const SubmoduleLayout: FC<PropsTypes> = ({
         return null;
       }
       const path = `${beginPath}/${route.path}`;
+      if (isExternalLink(route.path)) {
+        return (
+          <Menu.Item key={route.path} icon={route.iconName ? Icons[route.iconName]?.({}) : null}>
+            <a href={route.path} target="_blank" rel="noopener noreferrer">
+              {route.showTitle}
+            </a>
+          </Menu.Item>
+        );
+      }
       if (route.view || route.children?.every((ele) => ele.hideInMenu === true)) {
         return (
           <Menu.Item key={path} icon={route.iconName ? Icons[route.iconName]?.({}) : null}>
@@ -118,7 +127,10 @@ const SubmoduleLayout: FC<PropsTypes> = ({
           onOpenChange={(openKeys) => {
             setOpenMenuKeys((openKeys as Array<string>) || []);
           }}
-          onSelect={({ selectedKeys }) => {
+          onSelect={({ selectedKeys, key }) => {
+            if (isExternalLink(String(key))) {
+              return;
+            }
             setSelectedMenuKeys((selectedKeys as Array<string>) || []);
           }}
           {...menuProps}

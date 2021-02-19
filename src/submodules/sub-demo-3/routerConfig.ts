@@ -45,6 +45,10 @@ const routerConfig: RouterConfigInterface = [
         showTitle: '二级菜单222',
         view: TestPage,
         path: 'fff'
+      },
+      {
+        showTitle: '百度首页',
+        path: 'https://www.baidu.com'
       }
     ],
     path: 'ggg'
