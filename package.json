@@ -9,7 +9,7 @@
     "test": "dotenv -e .env.unit-testing craco test",
     "clear": "node ./scripts/clear.js",
     "lint": "eslint --ext js,ts,jsx,tsx src",
-    "deploy": "gh-pages -d build -r https://gitee.com/libin_w/react-antd-admin.git"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@ant-design/charts": "^1.0.17",

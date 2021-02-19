@@ -33,7 +33,7 @@ const roleList = [
   }
 ];
 mockServer({
-  url: '/api/user/login',
+  url: 'user/login',
   type: 'post',
   template: (options: any) => {
     const params = getPostParams(options.body);
@@ -68,7 +68,7 @@ mockServer({
   }
 });
 mockServer({
-  url: '/api/user/getUserInfo',
+  url: 'user/getUserInfo',
   type: 'get',
   template: (options: any) => {
     const responseBody: MockResponseType = {

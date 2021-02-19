@@ -1,1 +1,0 @@
-try_files $uri $uri.html /react-antd-admin/index.html $uri/ =404;
