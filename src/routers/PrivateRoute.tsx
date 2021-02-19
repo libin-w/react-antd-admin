@@ -4,7 +4,7 @@ import { NativeRouter } from '@/components';
 import { hasToken } from '@/utils/accessToken';
 import { ReactComponentType } from '@/@types';
 import { useDocumentTitle } from '@/hooks';
-import { splicedDocumentTitle } from '@/utils';
+import { splicedDocumentTitle, getBaseName } from '@/utils';
 export interface PrivateRouteProps extends RouteProps {
   showTitle?: string;
   component: ReactComponentType;
@@ -24,7 +24,7 @@ const PrivateRoute: FC<PrivateRouteProps> = ({ component: Component, showTitle, 
         } else {
           return (
             <NativeRouter
-              url="/login"
+              url={getBaseName() + 'login'}
               params={{
                 redirectUrl: window.location.href
               }}

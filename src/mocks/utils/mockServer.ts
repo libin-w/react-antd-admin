@@ -11,7 +11,7 @@ interface MockServerParamsType {
   template: (options: any) => MockResponseType;
 }
 function mockServer(params: MockServerParamsType) {
-  Mock.mock(params.url, params.type, params.template);
+  Mock.mock(window.location.origin + params.url, params.type, params.template);
 }
 export default mockServer;
 export { Random };

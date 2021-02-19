@@ -8,7 +8,7 @@ import axios, {
 } from 'axios';
 import { Modal, message } from 'antd';
 import { getToken, setToken } from '@/utils/accessToken';
-import { logoutAndClaerData } from '@/utils';
+import { logoutAndClaerData, getBaseName } from '@/utils';
 
 export interface CustomAxiosPromise<T = any> extends AxiosPromise<T> {
   cancel?: (message?: string) => void;
@@ -133,7 +133,8 @@ AXIOS_SERVICE.interceptors.response.use(
       return Promise.reject(error);
     }
     const errorApi = error?.config?.url;
-    isCancel(error) !== true && (window.location.href = errorApi ? `/500?api=${errorApi}` : '/500');
+    isCancel(error) !== true &&
+      (window.location.href = errorApi ? `${getBaseName}500?api=${errorApi}` : `${getBaseName}500`);
     return Promise.reject(error);
   }
 );
