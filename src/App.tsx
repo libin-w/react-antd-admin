@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-21 19:18:01
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-08 10:49:08
- * @Description:
- */
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
