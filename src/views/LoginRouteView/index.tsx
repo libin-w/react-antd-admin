@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Form, Input, Button, Tooltip } from 'antd';
 import { UserOutlined, SafetyOutlined } from '@ant-design/icons';
 import { useLockFn } from 'ahooks';
 import styled, { keyframes } from 'styled-components';
+import { getQueryString, getBaseName } from '@/utils';
 import userInfoActions from '@/store/modules/user-info/actions';
 import { useDispatch } from 'react-redux';
 import { AnyAction } from '@/store/types';
@@ -73,7 +73,6 @@ const accountList = [
   }
 ];
 const LoginRouteView: FC<{}> = () => {
-  const history = useHistory();
   const dispatch = useDispatch<(action: AnyAction) => Promise<any>>();
   const [form] = Form.useForm();
   const [loading, setLoading] = useState<boolean>(false);
@@ -103,7 +102,7 @@ const LoginRouteView: FC<{}> = () => {
         })
       )
         .then(() => {
-          history.replace('/');
+          window.location.replace(getQueryString('redirectUrl') || getBaseName());
         })
         .catch((err: any) => {
           console.log(err);

@@ -7,9 +7,9 @@
  */
 import { ModuleConfigInterface } from '@/@types';
 const moduleConfig: ModuleConfigInterface = {
-  moduleName: 'module-2',
-  modulePath: 'module-2',
+  moduleName: 'Large Sider',
+  modulePath: 'large-sider',
   iconName: 'AppstoreOutlined',
-  sort: 2
+  sort: 3
 };
 export default moduleConfig;

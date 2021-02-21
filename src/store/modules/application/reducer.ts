@@ -11,9 +11,9 @@ export interface SubmoduleConfigItemType extends ModuleConfigInterface {
  */
 const submoduleConfigList: SubmoduleConfigItemType[] = [
   {
-    sort: 4,
+    sort: 10,
     key: 'antd-link',
-    moduleName: 'AntDesign',
+    moduleName: 'Ant Design',
     iconName: 'AntDesignOutlined',
     modulePath: 'https://ant-design.gitee.io/index-cn'
   }

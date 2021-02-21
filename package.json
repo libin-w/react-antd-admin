@@ -2,6 +2,7 @@
   "name": "react-antd-admin",
   "version": "0.1.0",
   "private": true,
+  "description": "基于 React 和 Ant Design 实现的中后台前端解决方案。。。",
   "scripts": {
     "ii": "npm run clear && npm install --registry=https://registry.npm.taobao.org",
     "start:dev": "dotenv -c dev craco start",

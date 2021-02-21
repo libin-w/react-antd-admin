@@ -1,5 +1,7 @@
 import scrollTo from 'antd/lib/_util/scrollTo';
 import { removeToken } from '@/utils/accessToken';
+import history from '@/routers/history';
+
 const {
   NODE_ENV = 'production',
   REACT_APP_DEPLOY_PATH = '/',
@@ -88,14 +90,25 @@ export const randomInteger = (...args: [number] | [number, number]) => {
 };
 
 /**
+ * 获取URL参数
+ * @param name - 参数名
+ */
+export const getQueryString = (name: string): string | null => {
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+};
+
+/**
  * 清除缓存数据并跳转到登录页
  */
 export const logoutAndClaerData = (noRecord = false) => {
   removeToken();
   if (noRecord) {
-    window.location.href = `${getBaseName()}login`;
+    history.push('/login');
   } else {
-    window.location.href = `${getBaseName()}login?redirect_url=${window.location.pathname}`;
+    history.push(`/login?redirect_url=${window.location.pathname}`);
   }
 };
 /**
