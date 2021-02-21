@@ -6,6 +6,7 @@ import MainLayout from '@/layouts/MainLayout';
 import PrivateRoute from './PrivateRoute';
 import LoginRouteView from '@/views/LoginRouteView';
 import NotFoundPage from '@/views/NotFoundPage';
+import PermissionDeniedRouteView from '@/views/PermissionDeniedRouteView';
 import DemoRouteView from '@/views/DemoRouteView';
 import { getBaseName } from '@/utils/index';
 const ErrorLogPage = lazy(
@@ -20,6 +21,7 @@ const AppRoute: FC<{}> = () => {
           <Route path="/login" component={LoginRouteView} />
           <Route path="/demo" component={DemoRouteView} />
           <Route path="/404" component={NotFoundPage} />
+          <Route path="/403" component={PermissionDeniedRouteView} />
           <Route
             exact
             path="/local-error-log"

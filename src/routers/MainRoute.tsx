@@ -4,10 +4,12 @@ import { Switch, Redirect } from 'react-router-dom';
 import Immutable from 'seamless-immutable';
 import PrivateRoute from './PrivateRoute';
 import { isExternalLink } from '@/utils';
+import { AccessValueType } from '@/@types';
 import { Modal } from 'antd';
 import { UnifiedSuspense } from '@/components';
 import { SubmoduleConfigItemType } from '@/store/modules/application/reducer';
 import { RootStateInterface } from '@/store';
+import isPermitted from '@/utils/permission';
 interface PropsTypes {}
 
 const importSubmodulesFile = (moduleKey: string): Promise<{ default: ComponentType<any> }> => {
@@ -37,22 +39,24 @@ const MainRoute: FC<PropsTypes> = React.memo(() => {
     Immutable.ImmutableArray<SubmoduleConfigItemType>
   >((state) => state.application.submoduleConfigList, shallowEqual);
   let redirectPath = '/403';
-  if (submoduleConfigList?.[0]?.modulePath) {
-    redirectPath = `/${submoduleConfigList?.[0]?.modulePath}`;
+  const firstModule = submoduleConfigList.find((item) => isPermitted(item.access));
+  if (firstModule?.modulePath) {
+    redirectPath = `/${firstModule.modulePath}`;
   }
-
   return (
     <UnifiedSuspense>
       <Switch>
         {submoduleConfigList.map((module) => {
-          const { key, modulePath, moduleName } = module;
+          const { key, modulePath, moduleName, access } = module;
           if (isExternalLink(modulePath)) {
             return null;
           }
+
           return (
             <PrivateRoute
               key={key}
               showTitle={moduleName}
+              accessValue={access as AccessValueType}
               path={`/${modulePath}`}
               component={lazy(() => importSubmodulesFile(key))}
             />

@@ -33,7 +33,7 @@ const PageHeaderContent: FC<{}> = () => {
         <div className={styles.left}>
           <Avatar size={72} src={userInfo.avatar || defaultAvatarImg} />
           <div className={styles.user_info}>
-            <div className={styles.title}>早安，{userInfo.realName}，祝你开心每一天！</div>
+            <div className={styles.title}>hello，{userInfo.realName}，祝你开心每一天。。。</div>
             <div>
               {userInfo.roleList.map((roleName) => (
                 <span key={roleName.id} className={styles.role_name_item}>

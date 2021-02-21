@@ -9,7 +9,7 @@ export type UserInfoStateInterface = {
   realName: string;
   avatar: string;
   userId: number;
-  accessData: string[];
+  accessData: (string | number)[];
   roleList: any[];
 };
 

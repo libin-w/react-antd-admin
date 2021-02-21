@@ -5,6 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
 import { usePersistFn } from 'ahooks';
 import { isExternalLink } from '@/utils';
+import isPermitted from '@/utils/permission';
 import { SubmoduleConfigItemType } from '@/store/modules/application/reducer';
 
 const HeaderMenu = () => {
@@ -25,26 +26,31 @@ const HeaderMenu = () => {
     setSelectedKey(getModulePath());
   }, [location, getModulePath]);
   const menuItem = useMemo(() => {
-    return submoduleConfigList.map((module: any) => {
-      const { modulePath, moduleName, iconName } = module;
-      return (
-        <Menu.Item key={modulePath} icon={module.iconName ? Icons[iconName]?.({}) : null}>
-          {isExternalLink(modulePath) ? (
-            <a href={modulePath} target="_blank" rel="noopener noreferrer">
-              {moduleName}
-            </a>
-          ) : (
-            <NavLink
-              to={`/${modulePath}`}
-              activeStyle={{
-                pointerEvents: 'none'
-              }}
-            >
-              {moduleName}
-            </NavLink>
-          )}
-        </Menu.Item>
-      );
+    return submoduleConfigList.map((module) => {
+      const { modulePath, moduleName, iconName, access } = module;
+
+      if (isPermitted(access)) {
+        return (
+          <Menu.Item key={modulePath} icon={iconName ? Icons[iconName]?.({}) : null}>
+            {isExternalLink(modulePath) ? (
+              <a href={modulePath} target="_blank" rel="noopener noreferrer">
+                {moduleName}
+              </a>
+            ) : (
+              <NavLink
+                to={`/${modulePath}`}
+                activeStyle={{
+                  pointerEvents: 'none'
+                }}
+              >
+                {moduleName}
+              </NavLink>
+            )}
+          </Menu.Item>
+        );
+      } else {
+        return null;
+      }
     });
   }, [submoduleConfigList]);
   if (submoduleConfigList.length < 1) {
