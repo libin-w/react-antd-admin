@@ -6,4 +6,4 @@
 
 [react-antd-admin](https://github.com/libin-w/react-antd-admin) 是一个中后台前端解决方案，它基于 [react](https://github.com/facebook/react) 和 [ant-design](https://github.com/ant-design/ant-design)实现。
 
-- [在线预览](https://libin-w.github.io/react-antd-admin){:target="_blank"}
+- [在线预览](https://libin-w.github.io/react-antd-admin){target="_blank"}
