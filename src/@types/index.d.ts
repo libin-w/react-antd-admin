@@ -5,13 +5,18 @@
  * @LastEditTime: 2021-01-21 14:45:10
  * @Description: allTypes
  */
-import React, { RouteComponentProps } from 'react';
-import { ModuleConfigInterface } from './moduleConfig';
-import { RouterConfigItemInterface, RouterConfigInterface } from './routerConfig';
-type ReactComponentType = React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
+
+import { ModuleConfigInterface, AccessValueType } from './moduleConfig';
+import {
+  RouterConfigItemInterface,
+  RouterConfigInterface,
+  ReactComponentType
+} from './routerConfig';
+
 export {
   ReactComponentType,
   ModuleConfigInterface,
   RouterConfigItemInterface,
-  RouterConfigInterface
+  RouterConfigInterface,
+  AccessValueType
 };
