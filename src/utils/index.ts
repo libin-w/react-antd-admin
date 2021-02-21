@@ -5,7 +5,7 @@ import history from '@/routers/history';
 const {
   NODE_ENV = 'production',
   REACT_APP_DEPLOY_PATH = '/',
-  REACT_APP_SYSTEM_TITLE = '运营管理平台'
+  REACT_APP_SYSTEM_TITLE = 'React Antd Admin'
 } = process.env;
 export const splicedDocumentTitle = (title?: string): string => {
   if (title) {
