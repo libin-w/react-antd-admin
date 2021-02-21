@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-01 15:10:25
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-09 14:06:48
- * @Description: index
- */
 import ReactDOM from 'react-dom';
 import '@/assets/styles/index.scss';
 import App from './App';

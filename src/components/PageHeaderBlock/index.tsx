@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-28 10:29:07
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-01-28 10:55:28
- * @Description: PageHeaderBlock
- */
-
 import { FC } from 'react';
 import { PageHeader, PageHeaderProps } from 'antd';
 import styles from './style.module.scss';

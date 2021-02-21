@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-08-25 10:33:53
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-02 10:19:51
- * @Description: IntegratedTable
- */
-
 import React, { ReactNode } from 'react';
 import {
   Checkbox,

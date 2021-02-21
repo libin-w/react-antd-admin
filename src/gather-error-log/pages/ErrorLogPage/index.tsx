@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 09:50:41
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-08 15:45:20
- * @Description: ErrorLogPage
- */
 import { FC, useState } from 'react';
 import { PageHeader, Tabs, Button, Card, Modal } from 'antd';
 import { LogoutOutlined, ExclamationCircleOutlined } from '@ant-design/icons';

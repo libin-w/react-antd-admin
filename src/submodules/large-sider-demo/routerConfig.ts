@@ -1,13 +1,4 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-19 16:29:20
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-01-20 15:20:40
- * @Description: routerConfig
- */
-
 import TestPage from './views/TestPage';
-import TestPage1 from './views/TestPage1';
 import { RouterConfigInterface } from '@/@types';
 // console.log(TestPage1)
 const routerConfig: RouterConfigInterface = [

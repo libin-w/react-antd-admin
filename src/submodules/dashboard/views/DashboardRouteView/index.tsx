@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-29 10:24:35
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-01-29 10:25:14
- * @Description: DashboardRouteView
- */
 import React from 'react';
 import { Row, Col, Card, Radio, DatePicker, Space, Progress } from 'antd';
 import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';

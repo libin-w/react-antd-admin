@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-01 09:55:10
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-07 15:42:42
- * @Description: LogService
- */
 import Dexie from 'dexie';
 import config from '../config';
 interface AjaxLogType {

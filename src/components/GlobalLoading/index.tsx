@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-07-21 14:09:11
- * @LastEditors: WangLibin
- * @LastEditTime: 2020-07-21 14:32:31
- * @Description: GlobalLoading
- */
-
 import React from 'react';
 import { Spin } from 'antd';
 import GlobalLoadingServer from './server';

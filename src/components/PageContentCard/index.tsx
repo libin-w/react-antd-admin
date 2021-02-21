@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-01 16:04:38
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-04 14:52:54
- * @Description: PageContentCard
- */
 import { FC } from 'react';
 import { Card, CardProps } from 'antd';
 import classNames from 'classnames';

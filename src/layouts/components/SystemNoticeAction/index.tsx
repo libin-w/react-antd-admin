@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-08 18:18:54
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-09 10:51:38
- * @Description: SystemNoticeAction
- */
 import { FC, useEffect, ReactNode } from 'react';
 import { Avatar, Empty, Badge, Dropdown, List, Tabs, Tooltip } from 'antd';
 import { BellOutlined } from '@ant-design/icons';

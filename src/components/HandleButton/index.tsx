@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-08-24 14:56:50
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-04 17:46:37
- * @Description: ButtonOnTableCell
- */
 import React, { FC, ReactNode } from 'react';
 import { Button, Modal } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';

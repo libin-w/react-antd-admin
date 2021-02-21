@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-06-29 14:23:02
- * @LastEditors: WangLibin
- * @LastEditTime: 2020-12-31 13:35:05
- * @Description:
- */
-
 module.exports = {
   root: true,
   extends: ['react-app', 'plugin:prettier/recommended'],

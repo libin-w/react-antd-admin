@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-07-16 14:29:06
- * @LastEditors: WangLibin
- * @LastEditTime: 2020-09-27 11:12:17
- * @Description: node utils
- */
 const execa = require('execa');
 const chalk = require('chalk');
 const getCurrentBranch = () => {

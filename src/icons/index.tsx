@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-01-16 15:50:21
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-01-29 10:19:14
- * @Description: Icons
- */
 import React from 'react';
 import { ReactComponent as MenuHomeIcon } from './svg/menu-home.svg';
 

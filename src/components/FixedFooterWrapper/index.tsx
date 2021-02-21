@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-02 17:33:44
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-03 14:25:18
- * @Description: FixedFooterWrapper
- */
 import { FC, useState } from 'react';
 import ResizeObserver from 'rc-resize-observer';
 import variablesScss from '@/assets/styles/scss-variable.module.scss';

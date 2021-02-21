@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 09:50:41
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-07 16:39:50
- * @Description: PageHeaderContent
- */
 import { FC } from 'react';
 import { PageHeader, Avatar, Statistic, Tag, Divider } from 'antd';
 import { useSelector, shallowEqual } from 'react-redux';

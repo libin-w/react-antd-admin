@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-09 11:14:11
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-09 13:58:10
- * @Description: LocalErrorLogEntry
- */
 import { FC, useState } from 'react';
 import { Tooltip, Badge } from 'antd';
 import { Link } from 'react-router-dom';

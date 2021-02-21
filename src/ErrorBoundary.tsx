@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 17:58:53
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-08 10:49:01
- * @Description: ErrorBoundary
- */
 import React from 'react';
 import { Result, Button } from 'antd';
 import { FrownOutlined } from '@ant-design/icons';

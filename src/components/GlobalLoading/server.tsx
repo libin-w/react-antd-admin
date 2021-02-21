@@ -1,11 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-07-21 10:37:46
- * @LastEditors: WangLibin
- * @LastEditTime: 2020-12-09 16:29:40
- * @Description: GlobalLoading
- */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Spin } from 'antd';

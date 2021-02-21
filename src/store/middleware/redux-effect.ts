@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2020-07-24 09:50:51
- * @LastEditors: WangLibin
- * @LastEditTime: 2020-08-10 14:57:14
- * @Description: effectMiddleware
- */
 import { MiddlewareAPI, Dispatch, Middleware, AnyAction } from 'redux';
 import isPromise from '@/utils/isPromise';
 

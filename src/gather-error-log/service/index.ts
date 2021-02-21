@@ -1,10 +1,3 @@
-/*
- * @Author: WangLibin
- * @Date: 2021-02-07 10:48:45
- * @LastEditors: WangLibin
- * @LastEditTime: 2021-02-07 15:43:20
- * @Description:
- */
 import DB from './ErrorLogDatabase';
 export function add() {
   DB.transaction('rw', DB.ajaxLog, async () => {
