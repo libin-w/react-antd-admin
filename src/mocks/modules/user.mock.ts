@@ -39,7 +39,7 @@ mockServer({
     const params = getPostParams(options.body);
     const responseBody: MockResponseType = {
       code: '200',
-      message: '操作成功',
+      message: '操作成功！！！',
       data: null
     };
     if (params) {
@@ -73,7 +73,7 @@ mockServer({
   template: (options: any) => {
     const responseBody: MockResponseType = {
       code: '200',
-      message: '操作成功',
+      message: '操作成功！！！',
       data: null
     };
     try {
@@ -86,6 +86,33 @@ mockServer({
         avatar: currentUser?.avatar,
         roleList: roleList.filter((role) => currentUser?.roleIds?.includes(role.id))
       };
+    } catch (error) {
+      responseBody.code = '40001';
+      responseBody.message = '登录已失效，请重新登录。。。';
+    }
+
+    return responseBody;
+  }
+});
+mockServer({
+  url: 'user/logout',
+  type: 'post',
+  template: (options: any) => {
+    const responseBody: MockResponseType = {
+      code: '200',
+      message: '操作成功！！！',
+      data: null
+    };
+    try {
+      const userInfo = analyticToken(options.headers?.Authorization);
+      const currentUser = userData.find((user) => user.id === userInfo.id);
+      if (currentUser) {
+        responseBody.code = '200';
+        responseBody.message = '操作成功！！！';
+      } else {
+        responseBody.code = '40001';
+        responseBody.message = '登录已失效，请重新登录。。。';
+      }
     } catch (error) {
       responseBody.code = '40001';
       responseBody.message = '登录已失效，请重新登录。。。';

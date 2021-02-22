@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useEffect } from 'react';
 import { Switch, useLocation, useHistory } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
-import NotFoundPage from '@/views/NotFoundPage';
+import NotFoundPageRouteView from '@/views/NotFoundPageRouteView';
 import { usePersistFn } from 'ahooks';
 import { isExternalLink } from '@/utils';
 import { ReactComponentType, RouterConfigInterface, ModuleConfigInterface } from '@/@types';
@@ -66,7 +66,7 @@ const SubmoduleRouter: FC<PropsTypes> = ({ moduleConfig, routerConfig }) => {
   return (
     <Switch>
       {routeData.reactDom}
-      <PrivateRoute path="*" component={NotFoundPage} />
+      <PrivateRoute path="*" component={NotFoundPageRouteView} />
     </Switch>
   );
 };

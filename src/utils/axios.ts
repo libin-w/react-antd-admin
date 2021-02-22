@@ -134,7 +134,9 @@ AXIOS_SERVICE.interceptors.response.use(
     }
     const errorApi = error?.config?.url;
     isCancel(error) !== true &&
-      (window.location.href = errorApi ? `${getBaseName}500?api=${errorApi}` : `${getBaseName}500`);
+      (window.location.href = errorApi
+        ? `${getBaseName()}500?api=${errorApi}`
+        : `${getBaseName()}500`);
     return Promise.reject(error);
   }
 );

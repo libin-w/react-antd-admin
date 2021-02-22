@@ -11,7 +11,7 @@ const actions = {
     }
   }),
   logout: () => ({
-    type: types.LOGIN,
+    type: types.LOGOUT,
     payload: API_LOGOUT(),
     effect: (res: any) => {
       res && removeToken();
