@@ -41,6 +41,7 @@ const UserNameDropdown: FC<{}> = () => {
               content: '已退出登录，请重新登录！！！',
               duration: 2,
               onClose() {
+                GlobalLoading.server.hide();
                 history.push('/login');
               }
             });
