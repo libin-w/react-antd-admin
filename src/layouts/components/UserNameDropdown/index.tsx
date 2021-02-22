@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Avatar, Dropdown, Menu, Modal, message } from 'antd';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { RootStateInterface } from '@/store';
 import { GlobalLoading } from '@/components';
 import { UserInfoStateInterface } from '@/store/modules/user-info/reducer';
@@ -15,6 +16,7 @@ import actions from '@/store/modules/user-info/actions';
 import { AnyAction } from '@/store/types';
 const { confirm } = Modal;
 const UserNameDropdown: FC<{}> = () => {
+  const history = useHistory();
   const dispatch = useDispatch<(action: AnyAction) => Promise<any>>();
   const userInfo = useSelector<RootStateInterface, UserInfoStateInterface>(
     (state) => state.userInfo,
@@ -39,7 +41,7 @@ const UserNameDropdown: FC<{}> = () => {
               content: '已退出登录，请重新登录！！！',
               duration: 2,
               onClose() {
-                window.location.href = '/';
+                history.push('/login');
               }
             });
             console.log(res);
