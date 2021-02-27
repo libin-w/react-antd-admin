@@ -13,7 +13,7 @@ const submoduleConfigList: SubmoduleConfigItemType[] = [
   {
     sort: 10,
     key: 'antd-link',
-    moduleName: 'Ant Design',
+    moduleName: 'Ant Design 外链',
     iconName: 'AntDesignOutlined',
     access: [['admin', 'aa'], 'admin'],
     modulePath: 'https://ant-design.gitee.io/index-cn'

@@ -4,6 +4,12 @@ import { RouterConfigInterface } from '@/@types';
 // console.log(TestPage1)
 const routerConfig: RouterConfigInterface = [
   {
+    showTitle: '首页',
+    iconName: 'AppstoreOutlined',
+    view: TestPage1,
+    path: 'gfdggdfg'
+  },
+  {
     showTitle: '一级菜单111',
     iconName: 'AppstoreOutlined',
     children: [

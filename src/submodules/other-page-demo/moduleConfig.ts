@@ -1,9 +1,8 @@
 import { ModuleConfigInterface } from '@/@types';
 const moduleConfig: ModuleConfigInterface = {
-  moduleName: 'No Sider',
-  modulePath: 'no-sider',
-  hideInMenu: true,
+  moduleName: 'Other Page',
+  modulePath: 'other-page',
   iconName: 'AppstoreOutlined',
-  sort: 8
+  sort: 12
 };
 export default moduleConfig;

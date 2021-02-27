@@ -8,6 +8,9 @@
   justify-content: center;
   align-items: center;
 }
+.margin-t-base {
+  margin-top: $basicsContentMargin !important;
+}
 /* 生成 font-weight 值为 100 至 900 的类名 */
 @for $i from 1 through 9 {
   .font-w-#{100 * $i} {

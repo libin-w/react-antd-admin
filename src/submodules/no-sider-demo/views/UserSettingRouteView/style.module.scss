@@ -1,3 +1,7 @@
+.user_setting_page {
+  padding: $basicsContentMargin;
+  min-width: 800px;
+}
 .user_setting_container {
   display: flex;
   .setting_content {
@@ -19,8 +23,22 @@
     width: 320px;
   }
   .base_setting_content_right {
-    flex: 1;
     width: 0;
+    flex: 1;
     margin-left: 40px;
+    .title {
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 14px;
+      font-variant: tabular-nums;
+      line-height: 1.5715;
+      padding: 0 0 8px;
+    }
+    :global(.ant-image) {
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .upload_btn {
+      width: 120px;
+    }
   }
 }

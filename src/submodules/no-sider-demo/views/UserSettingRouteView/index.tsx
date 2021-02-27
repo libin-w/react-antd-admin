@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
-import { PageContentWrapper, PageContentCard } from '@/components';
+import { PageContentWrapper, PageContentCard, PageHeaderBlock } from '@/components';
 import { Menu } from 'antd';
+import { useHistory } from 'react-router-dom';
 import BaseSettingContent from './BaseSettingContent';
 import SafetyConfigContent from './SafetyConfigContent';
 import BindAccountContent from './BindAccountContent';
@@ -30,11 +31,24 @@ const contentConfig = [
   }
 ];
 const UserSettingRouteView: FC<{}> = () => {
+  const history = useHistory();
   const [contentKey, setContentKey] = useState<string>('base-setting');
   const currentContent = contentConfig.find((ele) => ele.key === contentKey);
+  console.log(history);
   return (
     <PageContentWrapper allPadding>
-      <PageContentCard allPadding bodyStyle={{ paddingLeft: '0px' }}>
+      <PageHeaderBlock
+        title="个人设置"
+        subTitle="个人信息、账号安全，以及消息通知等设置。"
+        onBack={
+          history.length > 1
+            ? () => {
+                history.goBack();
+              }
+            : undefined
+        }
+      />
+      <PageContentCard allPadding className="margin-t-base">
         <div className={styles.user_setting_container}>
           <Menu
             style={{ width: 200 }}

@@ -57,10 +57,6 @@ const UserNameDropdown: FC<{}> = () => {
   };
   const onClickMenu = ({ key }) => {
     switch (key) {
-      case 'menu-1':
-        break;
-      case 'menu-2':
-        break;
       case 'user-setting':
         historyHelper.push('/no-sider/user-setting');
         break;
@@ -77,12 +73,6 @@ const UserNameDropdown: FC<{}> = () => {
       placement="bottomLeft"
       overlay={
         <Menu onClick={onClickMenu}>
-          <Menu.Item key="menu-1" icon={<AppstoreOutlined />}>
-            菜单 1
-          </Menu.Item>
-          <Menu.Item key="menu-2" icon={<AppstoreOutlined />}>
-            菜单 2
-          </Menu.Item>
           <Menu.Item key="user-setting" icon={<AppstoreOutlined />}>
             个人设置
           </Menu.Item>

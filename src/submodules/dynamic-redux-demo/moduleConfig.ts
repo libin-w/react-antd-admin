@@ -1,9 +1,8 @@
 import { ModuleConfigInterface } from '@/@types';
 const moduleConfig: ModuleConfigInterface = {
-  moduleName: 'No Sider',
-  modulePath: 'no-sider',
-  hideInMenu: true,
+  moduleName: 'Dynamic Redux',
+  modulePath: 'dynamic-redux',
   iconName: 'AppstoreOutlined',
-  sort: 8
+  sort: 5
 };
 export default moduleConfig;
