@@ -14,6 +14,7 @@ import {
 } from '@ant-design/icons';
 import actions from '@/store/modules/user-info/actions';
 import { AnyAction } from '@/store/types';
+import historyHelper from '@/routers/historyHelper';
 const { confirm } = Modal;
 const UserNameDropdown: FC<{}> = () => {
   const history = useHistory();
@@ -60,6 +61,9 @@ const UserNameDropdown: FC<{}> = () => {
         break;
       case 'menu-2':
         break;
+      case 'user-setting':
+        historyHelper.push('/no-sider/user-setting');
+        break;
       case 'logout':
         handleClickLogout();
         break;
@@ -78,6 +82,9 @@ const UserNameDropdown: FC<{}> = () => {
           </Menu.Item>
           <Menu.Item key="menu-2" icon={<AppstoreOutlined />}>
             菜单 2
+          </Menu.Item>
+          <Menu.Item key="user-setting" icon={<AppstoreOutlined />}>
+            个人设置
           </Menu.Item>
           <Menu.Item>
             <a

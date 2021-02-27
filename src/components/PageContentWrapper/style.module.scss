@@ -1,5 +1,9 @@
 .page_content_wrapper {
   padding-top: $basicsContentMargin;
+
+  &:global(.all-padding) {
+    padding: $basicsContentMargin;
+  }
   :global(.ant-card) {
     margin-bottom: $basicsContentMargin;
     &:nth-last-of-type(1) {

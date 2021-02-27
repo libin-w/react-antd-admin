@@ -1,9 +1,9 @@
 import React from 'react';
-import DashboardModuleRoutes from './routers';
+import NoSiderApp from './views';
 import moduleConfig from './moduleConfig';
 class SubmoduleEntry extends React.Component {
   render() {
-    return <DashboardModuleRoutes modulePath={`/${moduleConfig.modulePath}`} />;
+    return <NoSiderApp modulePath={`/${moduleConfig.modulePath}`} />;
   }
 }
 

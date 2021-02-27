@@ -25,7 +25,6 @@ const initialState: UserInfoStateInterface = {
 
 // reducer
 export default function reducer(state: UserInfoStateInterface = initialState, action: AnyAction) {
-  console.log(action.payload);
   switch (action.type) {
     case `${types.GET_USER_INFO}_${ActionType.Pending}`:
       return { ...state, userInfoStatus: 'loading' };
