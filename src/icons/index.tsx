@@ -5,6 +5,9 @@ import Icon, {
   DashboardOutlined,
   AppstoreOutlined,
   AntDesignOutlined,
+  WarningOutlined,
+  CheckCircleOutlined,
+  CalendarOutlined,
   LinkOutlined
 } from '@ant-design/icons';
 interface IProps {
@@ -18,6 +21,9 @@ const Icons: {
   DashboardOutlined: (props) => <DashboardOutlined {...props} />,
   AppstoreOutlined: (props) => <AppstoreOutlined {...props} />,
   AntDesignOutlined: (props) => <AntDesignOutlined {...props} />,
+  WarningOutlined: (props) => <WarningOutlined {...props} />,
+  CheckCircleOutlined: (props) => <CheckCircleOutlined {...props} />,
+  CalendarOutlined: (props) => <CalendarOutlined {...props} />,
   LinkOutlined: (props) => <LinkOutlined {...props} />
 };
 export default Icons;
