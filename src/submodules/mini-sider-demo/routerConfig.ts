@@ -1,53 +1,30 @@
-import TestPage from './views/TestPage';
-import TestPage1 from './views/TestPage1';
+import BasicFormRouteView from './views/BasicFormRouteView';
+import StepFormRouteView from './views/StepFormRouteView';
+import AdvancedFormRouteView from './views/AdvancedFormRouteView';
 import { RouterConfigInterface } from '@/@types';
 // console.log(TestPage1)
 const routerConfig: RouterConfigInterface = [
   {
-    showTitle: '首页',
-    iconName: 'AppstoreOutlined',
-    view: TestPage1,
-    path: 'gfdggdfg'
-  },
-  {
-    showTitle: '一级菜单111',
-    iconName: 'AppstoreOutlined',
+    showTitle: '表单页',
+    iconName: 'FormOutlined',
     children: [
       {
-        showTitle: '二级菜单111',
-        children: [
-          {
-            showTitle: '三级菜单111',
-            children: [
-              {
-                showTitle: '四级菜单111',
-                view: TestPage,
-                path: 'sss'
-              }
-            ],
-            path: 'aaa'
-          },
-          {
-            showTitle: '三级菜单222',
-            view: TestPage,
-            path: 'sss'
-          }
-        ],
-        path: 'ddd'
+        showTitle: '基础表单',
+        view: BasicFormRouteView,
+        path: 'basic-form'
       },
       {
-        showTitle: '二级菜单222',
-        view: TestPage,
-        path: 'fff'
+        showTitle: '分步表单',
+        view: StepFormRouteView,
+        path: 'step-form'
+      },
+      {
+        showTitle: '高级表单',
+        view: AdvancedFormRouteView,
+        path: 'advanced-form'
       }
     ],
-    path: 'ggg'
-  },
-  {
-    showTitle: '一级菜单222',
-    iconName: 'AppstoreOutlined',
-    view: TestPage,
-    path: 'hhh'
+    path: 'form-page'
   },
   {
     showTitle: '百度首页',

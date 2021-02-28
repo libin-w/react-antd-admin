@@ -8,6 +8,7 @@ import Icon, {
   WarningOutlined,
   CheckCircleOutlined,
   CalendarOutlined,
+  FormOutlined,
   LinkOutlined
 } from '@ant-design/icons';
 interface IProps {
@@ -24,6 +25,7 @@ const Icons: {
   WarningOutlined: (props) => <WarningOutlined {...props} />,
   CheckCircleOutlined: (props) => <CheckCircleOutlined {...props} />,
   CalendarOutlined: (props) => <CalendarOutlined {...props} />,
+  FormOutlined: (props) => <FormOutlined {...props} />,
   LinkOutlined: (props) => <LinkOutlined {...props} />
 };
 export default Icons;

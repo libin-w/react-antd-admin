@@ -1,6 +1,29 @@
 import { FC } from 'react';
 import { Calendar, Badge } from 'antd';
 import { PageContentCard } from '@/components';
+import styled from 'styled-components';
+interface StylePropsType {}
+const Style = styled.div<StylePropsType>`
+  .events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .events .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .notes-month {
+    font-size: 28px;
+    text-align: center;
+  }
+  .notes-month section {
+    font-size: 28px;
+  }
+`;
 const FailPage: FC<{}> = () => {
   function getListData(value) {
     let listData;
@@ -61,7 +84,9 @@ const FailPage: FC<{}> = () => {
   }
   return (
     <PageContentCard allPadding style={{ minHeight: '360px' }}>
-      <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+      <Style>
+        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+      </Style>
     </PageContentCard>
   );
 };
