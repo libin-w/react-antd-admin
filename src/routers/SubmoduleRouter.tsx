@@ -4,7 +4,12 @@ import PrivateRoute from './PrivateRoute';
 import NotFoundPageRouteView from '@/views/NotFoundPageRouteView';
 import { usePersistFn } from 'ahooks';
 import { isExternalLink } from '@/utils';
-import { ReactComponentType, RouterConfigInterface, ModuleConfigInterface } from '@/@types';
+import {
+  ReactComponentType,
+  RouterConfigInterface,
+  ModuleConfigInterface,
+  AccessValueType
+} from '@/@types';
 interface PropsTypes {
   moduleConfig: ModuleConfigInterface;
   routerConfig: RouterConfigInterface;
@@ -17,6 +22,7 @@ const SubmoduleRouter: FC<PropsTypes> = ({ moduleConfig, routerConfig }) => {
       path: string;
       showTitle: string;
       exact: boolean;
+      access: AccessValueType;
       component: ReactComponentType;
     }[] = [];
     const pathList: string[] = [];
@@ -28,6 +34,7 @@ const SubmoduleRouter: FC<PropsTypes> = ({ moduleConfig, routerConfig }) => {
           pathList.push(path);
           routeList.push({
             path: path,
+            access: ele.access,
             showTitle: ele.showTitle + '-' + moduleConfig.moduleName,
             exact: ele.exact === false ? false : true,
             component: ele.view
@@ -47,6 +54,7 @@ const SubmoduleRouter: FC<PropsTypes> = ({ moduleConfig, routerConfig }) => {
             key={route.path}
             exact={route.exact}
             path={route.path}
+            accessValue={route.access}
             showTitle={route.showTitle}
             component={route.component}
           />

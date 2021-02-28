@@ -1,4 +1,5 @@
-import React, { RouteComponentProps } from 'react';
+import React, { RouteComponentProps, ReactNode } from 'react';
+import { BadgeProps } from 'antd';
 import { AccessValueType } from './moduleConfig';
 export type ReactComponentType =
   | React.ComponentType<RouteComponentProps<any>>
@@ -13,5 +14,6 @@ export type RouterConfigItemInterface = {
   view?: ReactComponentType;
   children?: RouterConfigItemInterface[];
   access?: AccessValueType;
+  brdgeConfig?: BadgeProps;
 };
 export type RouterConfigInterface = RouterConfigItemInterface[];

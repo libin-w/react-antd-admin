@@ -1,7 +1,7 @@
 import { FC, ReactChild, useState, useMemo, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Badge } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { usePersistFn } from 'ahooks';
 import { UnifiedSuspense } from '@/components';
@@ -56,8 +56,18 @@ const SubmoduleLayout: FC<PropsTypes> = ({
               activeStyle={{
                 pointerEvents: 'none'
               }}
+              style={{
+                position: 'relative',
+                width: '100%',
+                display: 'block'
+              }}
             >
               {route.showTitle}
+              {isCollapse !== true && route.brdgeConfig && (
+                <span className="basics-submodule-sider-menu-badge">
+                  <Badge {...route.brdgeConfig} />
+                </span>
+              )}
             </NavLink>
           </Menu.Item>
         );

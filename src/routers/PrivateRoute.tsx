@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Route, RouteProps, Redirect } from 'react-router-dom';
 import { hasToken } from '@/utils/accessToken';
 import { ReactComponentType, AccessValueType } from '@/@types';
@@ -27,7 +27,11 @@ const PrivateRoute: FC<PrivateRouteProps> = ({
       {...rest}
       render={(props) => {
         if (hasToken()) {
-          return isPermitted(accessValue) ? <Component {...props} /> : <Redirect to="/403" />;
+          return isPermitted(accessValue) ? (
+            <Component {...props} accessValue={accessValue} />
+          ) : (
+            <Redirect to="/403" />
+          );
         } else {
           return (
             <Redirect

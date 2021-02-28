@@ -64,7 +64,8 @@ const tailFormItemLayout = {
     offset: 7
   }
 };
-const BasicFormRouteView: FC<{}> = () => {
+const BasicFormRouteView: FC<{}> = (props) => {
+    console.log(props)
   const [form] = Form.useForm();
 
   const onFinish = (values: any) => {

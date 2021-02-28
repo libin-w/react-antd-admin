@@ -8,7 +8,8 @@ export interface HistoryConfigType {
   basename: string;
 }
 const historyConfig: HistoryConfigType = {
-  basename: NODE_ENV === 'production' ? REACT_APP_DEPLOY_PATH : '/'
+  basename:
+    NODE_ENV === 'production' && REACT_APP_ROUTER_MODE === 'history' ? REACT_APP_DEPLOY_PATH : '/'
 };
 const history =
   REACT_APP_ROUTER_MODE === 'history'
