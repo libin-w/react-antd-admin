@@ -14,7 +14,7 @@
     "gather-error-log-page.js": "/static/js/gather-error-log-page.1001309a.chunk.js",
     "large-sider-demo-entry-tsx.js": "/static/js/large-sider-demo-entry-tsx.eb6373ff.chunk.js",
     "main.css": "/static/css/main.a2e3fc5c.chunk.css",
-    "main.js": "/static/js/main.b0f0c97e.chunk.js",
+    "main.js": "/static/js/main.37856dd3.chunk.js",
     "mini-sider-demo-entry-tsx.js": "/static/js/mini-sider-demo-entry-tsx.3c7b3eb6.chunk.js",
     "no-sider-demo-entry-tsx.css": "/static/css/no-sider-demo-entry-tsx.9bc283b2.chunk.css",
     "no-sider-demo-entry-tsx.js": "/static/js/no-sider-demo-entry-tsx.9c7711a1.chunk.js",
@@ -55,7 +55,7 @@
     "static/js/dynamic-redux-demo-entry-tsx.1feba9b6.chunk.js.gz": "/static/js/dynamic-redux-demo-entry-tsx.1feba9b6.chunk.js.gz",
     "static/js/gather-error-log-page.1001309a.chunk.js.gz": "/static/js/gather-error-log-page.1001309a.chunk.js.gz",
     "static/js/large-sider-demo-entry-tsx.eb6373ff.chunk.js.gz": "/static/js/large-sider-demo-entry-tsx.eb6373ff.chunk.js.gz",
-    "static/js/main.b0f0c97e.chunk.js.gz": "/static/js/main.b0f0c97e.chunk.js.gz",
+    "static/js/main.37856dd3.chunk.js.gz": "/static/js/main.37856dd3.chunk.js.gz",
     "static/js/mini-sider-demo-entry-tsx.3c7b3eb6.chunk.js.gz": "/static/js/mini-sider-demo-entry-tsx.3c7b3eb6.chunk.js.gz",
     "static/js/no-sider-demo-entry-tsx.9c7711a1.chunk.js.gz": "/static/js/no-sider-demo-entry-tsx.9c7711a1.chunk.js.gz",
     "static/media/bg_image.4eb6d2ed.jpg": "/static/media/bg_image.4eb6d2ed.jpg",
@@ -73,7 +73,7 @@
     "static/css/13.55010984.chunk.css",
     "static/js/13.08af7729.chunk.js",
     "static/css/main.a2e3fc5c.chunk.css",
-    "static/js/main.b0f0c97e.chunk.js"
+    "static/js/main.37856dd3.chunk.js"
   ],
   "REACT_APP_AXIOS_BASE_URL": "http://libin_w.gitee.io",
   "REACT_APP_RUNTIME_ENV": "dev",
