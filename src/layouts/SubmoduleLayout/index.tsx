@@ -49,21 +49,22 @@ const SubmoduleLayout: FC<PropsTypes> = ({
       }
       if (route.view || route.children?.every((ele) => ele.hideInMenu === true)) {
         return (
-          <Menu.Item key={path} icon={route.iconName ? Icons[route.iconName]?.({}) : null}>
+          <Menu.Item
+            key={path}
+            icon={route.iconName ? Icons[route.iconName]?.({}) : null}
+            style={{
+              position: 'relative'
+            }}
+          >
             <NavLink
               exact
               to={path}
               activeStyle={{
                 pointerEvents: 'none'
               }}
-              style={{
-                position: 'relative',
-                width: '100%',
-                display: 'block'
-              }}
             >
               {route.showTitle}
-              {isCollapse !== true && route.brdgeConfig && (
+              {route.brdgeConfig && (
                 <span className="basics-submodule-sider-menu-badge">
                   <Badge {...route.brdgeConfig} />
                 </span>

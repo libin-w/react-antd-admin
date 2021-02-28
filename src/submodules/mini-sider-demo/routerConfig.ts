@@ -11,7 +11,12 @@ const routerConfig: RouterConfigInterface = [
       {
         showTitle: '基础表单',
         view: BasicFormRouteView,
-        path: 'basic-form'
+        iconName: 'FormOutlined',
+        path: 'basic-form',
+        brdgeConfig: {
+          count: 'new'
+        },
+        access: ['admin']
       },
       {
         showTitle: '分步表单',

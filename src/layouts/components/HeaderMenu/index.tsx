@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Menu } from 'antd';
+import { Menu, Badge } from 'antd';
 import Icons from '@/icons';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -27,14 +27,25 @@ const HeaderMenu = () => {
   }, [location, getModulePath]);
   const menuItem = useMemo(() => {
     return submoduleConfigList.map((module) => {
-      const { modulePath, moduleName, iconName, access } = module;
+      const { modulePath, moduleName, iconName, access, brdgeConfig } = module;
 
       if (isPermitted(access)) {
         return (
-          <Menu.Item key={modulePath} icon={iconName ? Icons[iconName]?.({}) : null}>
+          <Menu.Item
+            key={modulePath}
+            icon={iconName ? Icons[iconName]?.({}) : null}
+            style={{
+              position: 'relative'
+            }}
+          >
             {isExternalLink(modulePath) ? (
               <a href={modulePath} target="_blank" rel="noopener noreferrer">
                 {moduleName}
+                {brdgeConfig && (
+                  <div className="antd-admin-header-menu-badge">
+                    <Badge {...brdgeConfig} />
+                  </div>
+                )}
               </a>
             ) : (
               <NavLink
@@ -44,6 +55,11 @@ const HeaderMenu = () => {
                 }}
               >
                 {moduleName}
+                {brdgeConfig && (
+                  <div className="antd-admin-header-menu-badge">
+                    <Badge {...brdgeConfig} />
+                  </div>
+                )}
               </NavLink>
             )}
           </Menu.Item>

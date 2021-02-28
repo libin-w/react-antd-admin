@@ -1,4 +1,4 @@
-import React, { RouteComponentProps, ReactNode } from 'react';
+import React, { RouteComponentProps } from 'react';
 import { BadgeProps } from 'antd';
 import { AccessValueType } from './moduleConfig';
 export type ReactComponentType =

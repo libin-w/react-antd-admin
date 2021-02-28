@@ -160,9 +160,41 @@ body {
 }
 .basics-submodule-sider-menu-badge {
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
+  .ant-badge-count {
+    box-shadow: none;
+  }
+}
+.ant-menu-inline-collapsed-tooltip {
+  .basics-submodule-sider-menu-badge {
+    position: unset;
+    right: unset;
+    top: unset;
+    transform: unset;
+    margin-left: 6px;
+  }
+}
+.antd-admin-header-menu-badge {
+  position: absolute;
+  right: 2px;
+  top: 6px;
+  line-height: 0;
+  .ant-badge-count {
+    box-shadow: none;
+  }
+}
+.ant-menu-submenu-popup {
+  .antd-admin-header-menu-badge {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    line-height: 0;
+    .ant-badge-count {
+      box-shadow: none;
+    }
+  }
 }
 // 全局处理Form表单内，Button间距
 .ant-form {
