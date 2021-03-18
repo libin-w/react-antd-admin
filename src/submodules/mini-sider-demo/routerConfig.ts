@@ -11,7 +11,6 @@ const routerConfig: RouterConfigInterface = [
       {
         showTitle: '基础表单',
         view: BasicFormRouteView,
-        iconName: 'FormOutlined',
         path: 'basic-form',
         brdgeConfig: {
           count: 'new'
